@@ -4,16 +4,11 @@
 秀趣——文艺的名字下是一款实用的休闲类App。新闻视频和技术应有尽有，不管是学习技术知识还是了解社会国家大事，这款App都会是你的选择。<br>
 
 ##### 下面是部分截图
-<img src="/screenshot/S70425-105042.jpg" width="300" height="530">
-<img src="/screenshot/S70425-105106.jpg" width="300" height="530">
-<img src="/screenshot/S70425-105115.jpg" width="300" height="530">
-<img src="/screenshot/S70425-105216.jpg" width="300" height="530">
-<img src="/screenshot/S70425-105121.jpg" width="300" height="530">
-<img src="/screenshot/S70425-105125.jpg" width="300" height="530">
-<img src="/screenshot/S70425-105129.jpg" width="300" height="530">
-<img src="/screenshot/S70425-105203.jpg" width="300" height="530">
-<img src="/screenshot/S70425-105247.jpg" width="300" height="530">
-<img src="/screenshot/S70425-105914.jpg" width="300" height="530">
+<img src="/screenshot/S70425-105042.jpg" width="300" height="530"><img src="/screenshot/S70425-105106.jpg" width="300" height="530">
+<img src="/screenshot/S70425-105115.jpg" width="300" height="530"><img src="/screenshot/S70425-105216.jpg" width="300" height="530">
+<img src="/screenshot/S70425-105121.jpg" width="300" height="530"><img src="/screenshot/S70425-105125.jpg" width="300" height="530">
+<img src="/screenshot/S70425-105129.jpg" width="300" height="530"><img src="/screenshot/S70425-105203.jpg" width="300" height="530">
+<img src="/screenshot/S70425-105247.jpg" width="300" height="530"><img src="/screenshot/S70425-105914.jpg" width="300" height="530">
 
 ### 设计和美工
 遵照Metrial design的设计风格，简约平面化的设计。图标部分使用vector格式（适配性更好）。由于本人不是美工，图标来自iconfont和Metrial design图标库。
