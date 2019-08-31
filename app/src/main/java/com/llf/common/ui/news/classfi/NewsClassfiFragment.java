@@ -27,7 +27,7 @@ import com.llf.common.ui.news.presenter.NewsPresenter;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 /**
  * Created by llf on 2017/3/15.
@@ -43,9 +43,9 @@ public class NewsClassfiFragment extends BaseFragment implements NewsContract.Vi
         return fragment;
     }
 
-    @Bind(R.id.recyclerView)
+    @BindView(R.id.recyclerView)
     RecyclerView mRecyclerView;
-    @Bind(R.id.refreshLayout)
+    @BindView(R.id.refreshLayout)
     SwipeRefreshLayout mRefreshLayout;
 
     private NewsAdapter mAdapter;

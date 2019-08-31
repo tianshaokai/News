@@ -2,14 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.llf.common">
     <!-- supportsRtl支持设置排列方向 -->
-    <uses-feature
-        android:name="android.hardware.camera.any"
-        android:required="true"
-        />
-    <uses-sdk
-        android:minSdkVersion="11"
-        android:targetSdkVersion="25"
-        />
+<!--    <uses-feature-->
+<!--        android:name="android.hardware.camera.any"-->
+<!--        android:required="true"-->
+<!--        />-->
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -38,9 +34,9 @@
             android:value="true"/>
         <!-- 下载完成之后自动安装 -->
         <receiver android:name=".receiver.InstallReceiver">
-            <intent-filter>
-                <action android:name="android.intent.action.DOWNLOAD_COMPLETE"/>
-            </intent-filter>
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.DOWNLOAD_COMPLETE"/>-->
+<!--            </intent-filter>-->
         </receiver>
         <!-- 安装完成删除安装包 -->
         <receiver
@@ -58,22 +54,22 @@
             android:name=".service.UploadImgService"
             android:priority="1000"
             >
-            <intent-filter>
-                <action android:name="com.llf.xiuqu.intentservice.action.UPLOAD_IMAGE"/>
-            </intent-filter>
+<!--            <intent-filter>-->
+<!--                <action android:name="com.llf.xiuqu.intentservice.action.UPLOAD_IMAGE"/>-->
+<!--            </intent-filter>-->
         </service>
         <!-- 解决7.0隐私权限 -->
-        <provider
-            android:name="android.support.v4.content.FileProvider"
-            android:authorities="com.llf.common.provider666"
-            android:exported="false"
-            android:grantUriPermissions="true">
+<!--        <provider-->
+<!--            android:name="android.support.v4.content.FileProvider"-->
+<!--            android:authorities="com.llf.common.provider666"-->
+<!--            android:exported="false"-->
+<!--            android:grantUriPermissions="true">-->
 
-            <!-- 元数据 -->
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"/>
-        </provider>
+<!--            &lt;!&ndash; 元数据 &ndash;&gt;-->
+<!--            <meta-data-->
+<!--                android:name="android.support.FILE_PROVIDER_PATHS"-->
+<!--                android:resource="@xml/file_paths"/>-->
+<!--        </provider>-->
 
         <activity
             android:name=".WelcomeActivity"
@@ -118,10 +114,10 @@
             android:screenOrientation="portrait"
             android:theme="@style/VideoDetailTheme"
             />
-        <activity
-            android:name="com.llf.basemodel.image.BigImagePagerActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/BigImageTheme"/>
+<!--        <activity-->
+<!--            android:name="com.llf.basemodel.image.BigImagePagerActivity"-->
+<!--            android:screenOrientation="portrait"-->
+<!--            android:theme="@style/BigImageTheme"/>-->
         <activity
             android:name=".wxapi.WXEntryActivity"
             android:exported="true"

@@ -11,7 +11,7 @@ import android.widget.RelativeLayout;
 import com.llf.basemodel.utils.GuiUtils;
 import com.llf.common.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -22,7 +22,7 @@ import butterknife.ButterKnife;
 public class AttentionActivity extends AppCompatActivity {
     private static final String TAG = "AttentionActivity";
 
-    @Bind(R.id.container)
+    @BindView(R.id.container)
     RelativeLayout mContainer;
 
     @Override

@@ -25,7 +25,7 @@ import com.llf.common.ui.mine.presenter.TrackPresenter;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -36,13 +36,13 @@ import butterknife.OnClick;
 public class TrackActivity extends BaseActivity implements SwipeRefreshLayout.OnRefreshListener, TrackContract.View {
     private static final String TAG = "TrackActivity";
 
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar mToolbar;
-    @Bind(R.id.recyclerView)
+    @BindView(R.id.recyclerView)
     RecyclerView mRecyclerView;
-    @Bind(R.id.refreshLayout)
+    @BindView(R.id.refreshLayout)
     SwipeRefreshLayout mRefreshLayout;
-    @Bind(R.id.emptyLayout)
+    @BindView(R.id.emptyLayout)
     EmptyLayout mEmptyLayout;
 
     private GirlAdapter mAdapter;

@@ -10,7 +10,7 @@ import com.llf.common.App;
 import com.llf.common.R;
 import com.llf.common.WelcomeActivity;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 /**
  * Created by llf on 2017/3/14.
@@ -20,7 +20,7 @@ import butterknife.Bind;
 public class SettingActivity extends BaseActivity {
     private static final String TAG = "SettingActivity";
 
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar mToolbar;
 
     @Override

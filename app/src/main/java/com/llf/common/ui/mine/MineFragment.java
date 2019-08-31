@@ -37,7 +37,7 @@ import com.tencent.tauth.UiError;
 import java.io.File;
 import java.util.ArrayList;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import top.zibin.luban.Luban;
@@ -53,13 +53,13 @@ import static com.tencent.mm.sdk.platformtools.Util.bmpToByteArray;
 public class MineFragment extends BaseFragment implements MineContract.View, IUiListener, ShareDialog.OneShare {
     private static final String TAG = "MineFragment";
 
-    @Bind(R.id.avatar)
+    @BindView(R.id.avatar)
     ImageView mAvatar;
-    @Bind(R.id.img_attention)
+    @BindView(R.id.img_attention)
     ImageView mImgAttention;
-    @Bind(R.id.img_track)
+    @BindView(R.id.img_track)
     ImageView mImgTrack;
-    @Bind(R.id.img_share)
+    @BindView(R.id.img_share)
     ImageView mImgShare;
 
     private static final int CHANGE_AVATAIR = 1;
@@ -260,6 +260,5 @@ public class MineFragment extends BaseFragment implements MineContract.View, IUi
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
     }
 }

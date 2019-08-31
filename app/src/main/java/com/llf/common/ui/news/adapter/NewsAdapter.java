@@ -1,6 +1,7 @@
 package com.llf.common.ui.news.adapter;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -66,14 +67,14 @@ public class NewsAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(final BaseViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull final BaseViewHolder holder, int position) {
         if (!(viewFooter != 0 && position == getItemCount() - 1)) {
             int type = getItemViewType(position);
             if (mOnItemClickListener != null) {
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        mOnItemClickListener.onItemClick(position, holder);
+                        mOnItemClickListener.onItemClick(holder.getAdapterPosition(), holder);
                     }
                 });
             }

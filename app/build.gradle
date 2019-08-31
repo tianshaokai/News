@@ -2,24 +2,25 @@ apply plugin: 'com.android.application'
 
 android {
     signingConfigs {
-        xiuqu {
-            keyAlias 'key'
-            keyPassword '123456'
-            storeFile file('E:/MyWorkSpace/llf.jks')
-            storePassword '123456'
-        }
+        // xiuqu {
+        //     keyAlias 'key'
+        //     keyPassword '123456'
+        //     storeFile file('E:/MyWorkSpace/llf.jks')
+        //     storePassword '123456'
+        // }
     }
-    compileSdkVersion 25
-    buildToolsVersion "25.0.1"
+    compileSdkVersion 28
+//    buildToolsVersion "25.0.1"
     defaultConfig {
         applicationId "com.llf.common"
-        minSdkVersion 11
-        targetSdkVersion 25
+        minSdkVersion 14
+        targetSdkVersion 28
         versionCode 11
         versionName "1.2.8"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
         resConfigs "en"
+        manifestPlaceholders = [CHANNEL_VALUE: "adsds"]
         ndk {
             // 设置支持的SO库架构
             abiFilters 'armeabi', 'armeabi-v7a', 'x86', 'x86_64', 'arm64-v8a'
@@ -27,59 +28,95 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled true
+            minifyEnabled false
             // Zipalign优化
-            zipAlignEnabled true
-            shrinkResources true
+            zipAlignEnabled false
+            shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 
             // 自定义输出配置
-            applicationVariants.all { variant ->
-                variant.outputs.each { output ->
-                    def outputFile = output.outputFile
-                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
-                        // 输出apk名称为xiuqu_v1.0_wandoujia.apk
-                        def fileName = "xiuqu_v${defaultConfig.versionName}_${variant.productFlavors[0].name}.apk"
-                        output.outputFile = new File(outputFile.parent, fileName)
-                    }
-                }
-            }
+            // applicationVariants.all { variant ->
+            //     variant.outputs.each { output ->
+            //         def outputFile = output.outputFile
+            //         if (outputFile != null && outputFile.name.endsWith('.apk')) {
+            //             // 输出apk名称为xiuqu_v1.0_wandoujia.apk
+            //             def fileName = "xiuqu_v${defaultConfig.versionName}_${variant.productFlavors[0].name}.apk"
+            //             output.outputFile = new File(outputFile.parent, fileName)
+            //         }
+            //     }
+            // }
         }
         debug {
-            signingConfig signingConfigs.xiuqu
+            // signingConfig signingConfigs.xiuqu
         }
     }
-    productFlavors {
-        kuan {}
-        xiaomi {}
-        qh360 {}
-        baidu {}
-        wandoujia {}
-    }
+    // productFlavors {
+    //     kuan {}
+    //     xiaomi {}
+    //     qh360 {}
+    //     baidu {}
+    //     wandoujia {}
+    // }
 
-    productFlavors.all {
-        flavor -> flavor.manifestPlaceholders = [CHANNEL_VALUE: name]
+    // productFlavors.all {
+    //     flavor -> flavor.manifestPlaceholders = [CHANNEL_VALUE: name]
+    // }
+
+
+    lintOptions {
+        abortOnError false
     }
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support:support-annotations:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.0'
+
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    testCompile 'junit:junit:4.12'
-    compile project(':photopicker')
-    compile project(':videomodel')
-    compile files('libs/libammsdk.jar')
-    compile files('libs/mta-sdk-1.6.2.jar')
-    compile files('libs/open_sdk_r5788.jar')
-    compile 'com.android.support.constraint:constraint-layout:1.0.0'
-    compile 'com.android.support:support-annotations:22.2.0'
-    compile 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
+    testImplementation 'junit:junit:4.12'
+
+
+
+
+    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
     //前置检查
-    compile 'com.google.guava:guava:18.0'
+    implementation 'com.google.guava:guava:18.0'
     //在网页上查看sp和数据库 adb forward tcp:8080 tcp:8080
-    debugCompile 'com.amitshekhar.android:debug-db:1.0.0'
+    implementation 'com.amitshekhar.android:debug-db:1.0.0'
     //检查过渡绘制
-    compile 'com.jakewharton.scalpel:scalpel:1.1.2'
+    implementation 'com.jakewharton.scalpel:scalpel:1.1.2'
+
+    implementation 'top.zibin:Luban:1.0.9'
+
+    //jsoup网页解析
+    implementation 'org.jsoup:jsoup:1.8.3'
+
+    implementation 'io.reactivex:rxandroid:1.2.1'
+    implementation 'io.reactivex:rxjava:1.2.7'
+
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
+    //view注解
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+
+    implementation 'com.google.code.gson:gson:2.2.4'
+
+    //分包
+    implementation 'com.android.support:multidex:1.0.2'
+
+    implementation 'org.sufficientlysecure:html-textview:1.3'
+    implementation 'pub.devrel:easypermissions:0.2.1'
+
+    implementation project(':basemodel')
+    implementation project(':photopicker')
+    implementation project(':videomodel')
+
+    implementation files('libs/libammsdk.jar')
+    implementation files('libs/mta-sdk-1.6.2.jar')
+    implementation files('libs/open_sdk_r5788.jar')
 }

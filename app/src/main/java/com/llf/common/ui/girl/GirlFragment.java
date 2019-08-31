@@ -20,7 +20,7 @@ import com.llf.common.ui.girl.presenter.GirlPresenter;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -36,9 +36,9 @@ public class GirlFragment extends BaseFragment implements SwipeRefreshLayout.OnR
         return girlFragment;
     }
 
-    @Bind(R.id.recyclerView)
+    @BindView(R.id.recyclerView)
     RecyclerView mRecyclerView;
-    @Bind(R.id.refreshLayout)
+    @BindView(R.id.refreshLayout)
     SwipeRefreshLayout mRefreshLayout;
 
     private GirlAdapter mAdapter;

@@ -23,7 +23,7 @@ import com.llf.common.ui.video.presenter.VideoPresenter;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -39,9 +39,9 @@ public class VideoFragment extends BaseFragment implements SwipeRefreshLayout.On
         return videoFragment;
     }
 
-    @Bind(R.id.recyclerView)
+    @BindView(R.id.recyclerView)
     RecyclerView mRecyclerView;
-    @Bind(R.id.refreshLayout)
+    @BindView(R.id.refreshLayout)
     SwipeRefreshLayout mRefreshLayout;
 
     private BaseAdapter mAdapter;

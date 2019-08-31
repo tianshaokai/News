@@ -16,6 +16,7 @@ import com.llf.basemodel.dialog.DialogTools;
 import com.llf.basemodel.utils.ToastUtil;
 
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * Created by llf on 2017/3/1.
@@ -25,6 +26,7 @@ import butterknife.ButterKnife;
 public abstract class BaseFragment extends Fragment {
     private boolean isViewPrepared; // 标识fragment视图已经初始化完毕
     private boolean hasFetchData; // 标识已经触发过懒加载数据
+    private Unbinder unbinder;
 
     @Override
     public void onAttach(Context context) {
@@ -40,7 +42,7 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(getLayoutId(), container, false);
-        ButterKnife.bind(this, rootView);
+        unbinder = ButterKnife.bind(this, rootView);
         this.initView();
         isViewPrepared = true;
         return rootView;
@@ -95,7 +97,9 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        ButterKnife.unbind(this);
+        if (unbinder != null) {
+            unbinder.unbind();
+        }
         hasFetchData = false;
         isViewPrepared = false;
         BaseApplication.getRefWatcher(getActivity()).watch(this);

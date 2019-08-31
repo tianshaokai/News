@@ -1,6 +1,7 @@
 package com.llf.common.ui.girl.adapter;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -51,8 +52,10 @@ public class GirlAdapter extends RecyclerView.Adapter<BaseViewHolder> {
         datas.addAll(elements);
         notifyDataSetChanged();
     }
+
+    @NonNull
     @Override
-    public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public BaseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         if (viewType == ITEM_NOIMAGE) {
             return new BaseViewHolder(LayoutInflater.from(mContext).inflate(R.layout.item_jcode_no_image, parent, false));
         } else if (viewType == ITEM_HASIMAGE) {
@@ -64,13 +67,13 @@ public class GirlAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(BaseViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull final BaseViewHolder holder, int position) {
         if (!(viewFooter != 0 && position == getItemCount() - 1)) {
             if (mOnItemClickListener != null) {
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        mOnItemClickListener.onItemClick(position);
+                        mOnItemClickListener.onItemClick(holder.getAdapterPosition());
                     }
                 });
             }

@@ -2,7 +2,7 @@
           package="llf.videomodel"
     >
     <!--改变屏幕亮度-->
-    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+<!--    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>-->
     <!--网络变化-->
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
 

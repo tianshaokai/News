@@ -25,21 +25,21 @@ import com.llf.common.ui.video.VideoFragment;
 
 import java.io.File;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class MainActivity extends BaseActivity implements ViewPager.OnPageChangeListener, MainContract.View {
     private static final String TAG = "MainActivity";
 
-    @Bind(R.id.journalism)
+    @BindView(R.id.journalism)
     Button mNews;
-    @Bind(R.id.video)
+    @BindView(R.id.video)
     Button mVideo;
-    @Bind(R.id.girl)
+    @BindView(R.id.girl)
     Button mGirl;
-    @Bind(R.id.mine)
+    @BindView(R.id.mine)
     Button mMine;
-    @Bind(R.id.viewPager)
+    @BindView(R.id.viewPager)
     ViewPager mViewPager;
 
     private String[] mTitles;

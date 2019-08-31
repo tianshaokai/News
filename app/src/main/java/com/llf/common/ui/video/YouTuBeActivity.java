@@ -31,7 +31,7 @@ import com.llf.common.widget.YouTubeVideoView;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 /**
  * Created by llf on 2017/7/5.
@@ -42,11 +42,11 @@ import butterknife.Bind;
 public class YouTuBeActivity extends BaseActivity implements TextureView.SurfaceTextureListener, VideoContract.View, YouTubeVideoView.Callback, MediaPlayer.OnPreparedListener {
     private static final String TAG = "YouTuBeActivity";
 
-    @Bind(R.id.video_view)
+    @BindView(R.id.video_view)
     TextureView mVideoView;
-    @Bind(R.id.recyclerView)
+    @BindView(R.id.recyclerView)
     RecyclerView mRecyclerView;
-    @Bind(R.id.youtube_view)
+    @BindView(R.id.youtube_view)
     YouTubeVideoView mYoutubeView;
 
     private MediaPlayer mMediaPlayer;

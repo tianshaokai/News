@@ -27,6 +27,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * Created by llf on 2017/3/1.
@@ -36,6 +37,7 @@ import butterknife.ButterKnife;
 public abstract class BaseActivity extends AppCompatActivity {
     private PermissionListener mPermissionListener;
     private static final int CODE_REQUEST_PERMISSION = 1;
+    private Unbinder unbinder;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -43,7 +45,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
         AppManager.instance.addActivity(this);
         setContentView(getLayoutId());
-        ButterKnife.bind(this);
+        unbinder = ButterKnife.bind(this);
         this.initView();
     }
 
@@ -87,7 +89,9 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         AppManager.instance.removeActivity(this);
-        ButterKnife.unbind(this);
+        if (unbinder != null) {
+            unbinder.unbind();
+        }
         BaseApplication.getRefWatcher(this).watch(this);
     }
 

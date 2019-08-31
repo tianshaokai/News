@@ -9,7 +9,7 @@ import com.llf.basemodel.base.BaseFragmentAdapter;
 import com.llf.common.R;
 import com.llf.common.ui.news.classfi.NewsClassfiFragment;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -26,9 +26,9 @@ public class NewsFragment extends BaseFragment implements ViewPager.OnPageChange
     public static final int THREE = 2;
     public static final int FOUR = 3;
 
-    @Bind(R.id.tabs)
+    @BindView(R.id.tabs)
     TabLayout mTabs;
-    @Bind(R.id.viewPager)
+    @BindView(R.id.viewPager)
     ViewPager mViewPager;
 
     private String[] titles = {"头条", "NBA", "汽车", "笑话"};
@@ -69,7 +69,7 @@ public class NewsFragment extends BaseFragment implements ViewPager.OnPageChange
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
+//        ButterKnife.unbind(this);
     }
 
     @Override

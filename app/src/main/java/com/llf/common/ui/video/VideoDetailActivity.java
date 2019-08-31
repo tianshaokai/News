@@ -41,7 +41,7 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import llf.videomodel.VideoPlayer;
 
 import static com.tencent.mm.sdk.platformtools.Util.bmpToByteArray;
@@ -54,11 +54,11 @@ import static com.tencent.mm.sdk.platformtools.Util.bmpToByteArray;
 public class VideoDetailActivity extends BaseActivity implements VideoContract.View, ShareDialog.OneShare {
     private static final String TAG = "VideoDetailActivity";
 
-    @Bind(R.id.viewPager)
+    @BindView(R.id.viewPager)
     VideoPlayer mViewPager;
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar mToolbar;
-    @Bind(R.id.recyclerView)
+    @BindView(R.id.recyclerView)
     RecyclerView mRecyclerView;
 
     private VideoContract.Presenter mPresenter;

@@ -26,7 +26,7 @@ import com.llf.common.ui.news.presenter.NewsDetailPresenter;
 
 import org.sufficientlysecure.htmltextview.HtmlTextView;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 /**
  * Created by llf on 2017/3/24.
@@ -44,13 +44,13 @@ public class NewsDetailActivity extends BaseActivity implements NewsDetailContra
         ActivityCompat.startActivity(mContext, intent, options.toBundle());
     }
 
-    @Bind(R.id.ivImage)
+    @BindView(R.id.ivImage)
     ImageView mIvImage;
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar mToolbar;
-    @Bind(R.id.collapsing_toolbar)
+    @BindView(R.id.collapsing_toolbar)
     CollapsingToolbarLayout mCollapsingToolbar;
-    @Bind(R.id.htNewsContent)
+    @BindView(R.id.htNewsContent)
     HtmlTextView mHtNewsContent;
 
     private NewsEntity mEntity;//详情数据
