@@ -54,22 +54,22 @@
             android:name=".service.UploadImgService"
             android:priority="1000"
             >
-<!--            <intent-filter>-->
-<!--                <action android:name="com.llf.xiuqu.intentservice.action.UPLOAD_IMAGE"/>-->
-<!--            </intent-filter>-->
+            <intent-filter>
+                <action android:name="com.llf.xiuqu.intentservice.action.UPLOAD_IMAGE"/>
+            </intent-filter>
         </service>
         <!-- 解决7.0隐私权限 -->
-<!--        <provider-->
-<!--            android:name="android.support.v4.content.FileProvider"-->
-<!--            android:authorities="com.llf.common.provider666"-->
-<!--            android:exported="false"-->
-<!--            android:grantUriPermissions="true">-->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.llf.common.provider666"
+            android:exported="false"
+            android:grantUriPermissions="true">
 
-<!--            &lt;!&ndash; 元数据 &ndash;&gt;-->
-<!--            <meta-data-->
-<!--                android:name="android.support.FILE_PROVIDER_PATHS"-->
-<!--                android:resource="@xml/file_paths"/>-->
-<!--        </provider>-->
+            <!-- 元数据 -->
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"/>
+        </provider>
 
         <activity
             android:name=".WelcomeActivity"
@@ -114,10 +114,10 @@
             android:screenOrientation="portrait"
             android:theme="@style/VideoDetailTheme"
             />
-<!--        <activity-->
-<!--            android:name="com.llf.basemodel.image.BigImagePagerActivity"-->
-<!--            android:screenOrientation="portrait"-->
-<!--            android:theme="@style/BigImageTheme"/>-->
+        <activity
+            android:name="com.llf.basemodel.image.BigImagePagerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BigImageTheme"/>
         <activity
             android:name=".wxapi.WXEntryActivity"
             android:exported="true"
