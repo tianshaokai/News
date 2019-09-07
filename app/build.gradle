@@ -2,15 +2,14 @@ apply plugin: 'com.android.application'
 
 android {
     signingConfigs {
-        // xiuqu {
-        //     keyAlias 'key'
-        //     keyPassword '123456'
-        //     storeFile file('E:/MyWorkSpace/llf.jks')
-        //     storePassword '123456'
-        // }
+        release {
+            keyAlias 'xiaopeng'
+            keyPassword '931020'
+            storeFile file('../news.jks')
+            storePassword 'xiaopeng931020'
+        }
     }
     compileSdkVersion 28
-//    buildToolsVersion "25.0.1"
     defaultConfig {
         applicationId "com.llf.common"
         minSdkVersion 14
@@ -33,35 +32,19 @@ android {
             zipAlignEnabled false
             shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-
-            // 自定义输出配置
-            // applicationVariants.all { variant ->
-            //     variant.outputs.each { output ->
-            //         def outputFile = output.outputFile
-            //         if (outputFile != null && outputFile.name.endsWith('.apk')) {
-            //             // 输出apk名称为xiuqu_v1.0_wandoujia.apk
-            //             def fileName = "xiuqu_v${defaultConfig.versionName}_${variant.productFlavors[0].name}.apk"
-            //             output.outputFile = new File(outputFile.parent, fileName)
-            //         }
-            //     }
-            // }
-        }
-        debug {
-            // signingConfig signingConfigs.xiuqu
+            signingConfig signingConfigs.release
+//             自定义输出配置
+            applicationVariants.all { variant ->
+                variant.outputs.each { output ->
+                    def outputFile = output.outputFile
+                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                        def fileName = "new_v${defaultConfig.versionName}.apk"
+                        output.outputFileName = fileName
+                    }
+                }
+            }
         }
     }
-    // productFlavors {
-    //     kuan {}
-    //     xiaomi {}
-    //     qh360 {}
-    //     baidu {}
-    //     wandoujia {}
-    // }
-
-    // productFlavors.all {
-    //     flavor -> flavor.manifestPlaceholders = [CHANNEL_VALUE: name]
-    // }
-
 
     lintOptions {
         abortOnError false
@@ -78,8 +61,6 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     testImplementation 'junit:junit:4.12'
-
-
 
 
     implementation 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
